@@ -1,0 +1,160 @@
+/* FONTES
+font-family: 'Bebas Neue', sans-serif;
+font-family: 'Pinyon Script', cursive;
+font-family: 'Allura', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Cinzel', serif;
+font-family: 'Cormorant Garamond', serif;
+font-family: 'UnifrakturCook', serif;
+
+PALETA DE CORES
+#e88d27
+#f3cbb6
+#d0a933 */
+
+/*----------------GERAL----------------------*/
+body{
+     background-color: black;
+     color: white;
+}
+
+/*----------------BANNER---------------------*/
+
+/* RESET BÁSICO DO BANNER */
+.banner {
+  padding: 0;
+  margin: 0;
+}
+
+/* CONTAINER PRINCIPAL */
+.banner-wrapper {
+  position: relative;
+  height: 40vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: red;
+}
+
+/* CAMADA 1 — IMAGEM */
+.banner-wrapper img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* CAMADA 2 — OVERLAY */
+.banner-wrapper .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.7) 60%,
+    #000 100%
+  );
+  z-index: 2;
+}
+
+/* CAMADA 3 — TEXTO */
+.banner-wrapper .texto {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: #fff;
+}
+
+/* TÍTULO PRINCIPAL — NEON */
+.banner-titulo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 12vw, 12rem);
+  color: #e88d27;
+
+  text-shadow:
+    0 0 6px  #ffdbb1,
+    0 0 14px rgba(232, 141, 39, 0.9),
+    0 0 40px rgba(232, 141, 39, 0.6);
+
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+/* ANIMAÇÃO NEON MAIS SUAVE */
+@keyframes neonPulse {
+  from {
+    text-shadow:
+      0 0 4px  #ffddb8,
+      0 0 16px rgba(232, 141, 39, 0.7);
+  }
+  to {
+    text-shadow:
+      0 0 10px #ffe7c8,
+      0 0 50px rgba(232, 141, 39, 0.9);
+  }
+}
+
+/* SUBTÍTULO SCRIPT */
+.banner-subtitulo {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+
+  font-family: 'Allura', cursive;
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: #fff;
+
+  z-index: 4;
+  pointer-events: none;
+
+  text-shadow:
+    0 0 6px  #e88d27,
+    0 0 18px rgba(232, 141, 39, 0.8),
+    0 0 50px rgba(232, 141, 39, 0.6);
+}
+
+/* ÁREA DE TEXTO ABAIXO DO BANNER */
+.banner-texto {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: #ffac4d;
+
+  text-shadow:
+    0 0 6px  #ffdbb1,
+    0 0 14px rgba(161, 88, 4, 0.9),
+    0 0 40px rgba(100, 56, 6, 0.877);
+}
+/*--------------------------------------------------*/
+
+.cards{
+     display: flex;
+     gap: 20px;
+     justify-content: center;
+     flex-wrap: wrap;
+     
+}
+.card-itens img{
+     height: 30vh;
+     position: relative;
+      
+}
+
+h5{
+     height: 1vh;
+}
+
+.card-itens p{
+     font-size: 1.5rem;
+     text-align: center;
+     background-color: red;
+     margin-top: 0.5vh;
+}
