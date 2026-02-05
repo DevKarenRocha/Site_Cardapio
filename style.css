@@ -1,160 +1,247 @@
-/* FONTES
-font-family: 'Bebas Neue', sans-serif;
-font-family: 'Pinyon Script', cursive;
-font-family: 'Allura', cursive;
-font-family: 'Great Vibes', cursive;
-font-family: 'Cinzel', serif;
-font-family: 'Cormorant Garamond', serif;
-font-family: 'UnifrakturCook', serif;
+/*-------------------- RESET GERAL-------------------- */
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+ }
 
-PALETA DE CORES
-#e88d27
-#f3cbb6
-#d0a933 */
+/*-----------------------FONTES----------------------- */
+ @font-face {
+      font-family:'bebasneue' ;
+      src: url(FONTES/BebasNeue-Regular.otf) format('opentype');
+      font-weight: normal;
+      font-style: normal;
+ }
 
-/*----------------GERAL----------------------*/
-body{
-     background-color: black;
-     color: white;
+ @font-face {
+      font-family:'highspirited' ;
+      src: url(FONTES/HighSpirited.ttf) format('opentype');
+      font-weight: normal;
+      font-style: normal;
+ }
+
+/*-----------------------BANNER----------------------- */
+ .banner img {
+      width: 100%;
+      height: 50vh; 
+      display: block;
+      object-fit: cover;
+ }
+
+ .banner {
+      position: relative;       
+      width: 100%;
+      height: 45vh;
+      overflow: hidden;
+ }
+
+ .img-banner{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;        
+      z-index: 1;
+ }
+
+ .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.685);
+      z-index: 2;
+ }
+
+ .banner-content {
+      position: relative;
+      z-index: 3;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      margin: 0;
 }
 
-/*----------------BANNER---------------------*/
-
-/* RESET BÁSICO DO BANNER */
-.banner {
-  padding: 0;
-  margin: 0;
+.banner-content h1{
+      z-index: 4;
+      color:#e88d27;
+      font-family:'bebasneue', times, serif;
+      font-size: 15rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow:
+           0 0 5px #ffffff,
+           0 0 10px #b46c19,
+           0 0 20px #b36d1f,
+           0 0 40px #bb5202,
+           0 0 80px #d16009;
+      animation: neonPulse 1.5s infinite alternate;
 }
 
-/* CONTAINER PRINCIPAL */
-.banner-wrapper {
-  position: relative;
-  height: 40vh;
-  width: 100%;
-  overflow: hidden;
-  background-color: red;
+.banner-content span {
+      z-index: 5;
+      color: #ffdfb5;
+      font-family: 'highspirited', times, serif;
+      font-size: 15rem;
+      position: absolute;
+      bottom: 5vh;   /* move para baixo */
+      left: 100vh;
+      top: 13vh;
+      transform: translateX(-50%) rotate(-8deg);
+      pointer-events: none;
+      text-shadow:
+           0 0 5px #ffffff,
+           0 0 10px #000000,
+           0 0 20px #b36d1f,
+           0 0 40px #bb5202,
+           0 0 80px #d16009;
 }
 
-/* CAMADA 1 — IMAGEM */
-.banner-wrapper img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* CAMADA 2 — OVERLAY */
-.banner-wrapper .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.25) 0%,
-    rgba(0, 0, 0, 0.7) 60%,
-    #000 100%
-  );
-  z-index: 2;
-}
-
-/* CAMADA 3 — TEXTO */
-.banner-wrapper .texto {
-  position: relative;
-  z-index: 3;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-  color: #fff;
-}
-
-/* TÍTULO PRINCIPAL — NEON */
-.banner-titulo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4rem, 12vw, 12rem);
-  color: #e88d27;
-
-  text-shadow:
-    0 0 6px  #ffdbb1,
-    0 0 14px rgba(232, 141, 39, 0.9),
-    0 0 40px rgba(232, 141, 39, 0.6);
-
-  animation: neonPulse 2s ease-in-out infinite alternate;
-}
-
-/* ANIMAÇÃO NEON MAIS SUAVE */
 @keyframes neonPulse {
-  from {
-    text-shadow:
-      0 0 4px  #ffddb8,
-      0 0 16px rgba(232, 141, 39, 0.7);
-  }
-  to {
-    text-shadow:
-      0 0 10px #ffe7c8,
-      0 0 50px rgba(232, 141, 39, 0.9);
-  }
+      from {
+            text-shadow:
+                0 0 5px #ffffff,
+                0 0 10px #b46c19,
+                0 0 20px #b36d1f,
+                0 0 40px #bb5202,
+                0 0 80px #d16009;
+      }
+
+      to {
+           text-shadow:
+                0 0 10px #ffffff,
+                0 0 20px #ffffff,
+                0 0 40px #cd8c13,
+                0 0 80px #a86d00;
+      }
 }
 
-/* SUBTÍTULO SCRIPT */
-.banner-subtitulo {
-  position: absolute;
-  top: 6%;
-  left: 50%;
-  transform: translateX(-50%) rotate(-4deg);
+/*-------------------CONF. MOBILE--------------------- */
 
-  font-family: 'Allura', cursive;
-  font-size: clamp(3rem, 10vw, 10rem);
-  color: #fff;
+/*CELULARES PEQUENOS*/
+@media(max-width:320px){
+     .banner img{
+           height: 25dvh;
+           }
 
-  z-index: 4;
-  pointer-events: none;
+     .banner-overlay {
+           height: 25dvh;
+           }
 
-  text-shadow:
-    0 0 6px  #e88d27,
-    0 0 18px rgba(232, 141, 39, 0.8),
-    0 0 50px rgba(232, 141, 39, 0.6);
+     .banner-content {
+           top: -12dvh;
+           }
+
+     .banner-content h1 {
+           font-size: 3rem;
+           }
+
+     .banner-content span {
+           font-size: 4rem;
+           left: 50%;
+           top: 18dvh;
+           }
+ }
+
+/*CELULARES PADRÃO*/
+@media(min-width:360px){
+      .banner img{
+           height: 20dvh;
+           }
+
+     .banner-overlay {
+           height: 20dvh;
+           }
+
+     .banner-content {
+           top: -15dvh;
+           }
+
+     .banner-content h1 {
+           font-size: 4rem;
+           }
+
+     .banner-content span {
+           font-size: 5rem;
+           left: 50%;
+           top: 20dvh;
+           }
 }
 
-/* ÁREA DE TEXTO ABAIXO DO BANNER */
-.banner-texto {
-  text-align: center;
-  font-size: 2rem;
-  font-family: 'Cormorant Garamond', serif;
-  color: #ffac4d;
+@media(min-width:750px){
+      .banner img{
+           height: 23dvh;
+           }
 
-  text-shadow:
-    0 0 6px  #ffdbb1,
-    0 0 14px rgba(161, 88, 4, 0.9),
-    0 0 40px rgba(100, 56, 6, 0.877);
-}
-/*--------------------------------------------------*/
+     .banner-overlay {
+           height: 23dvh;
+           }
 
-.cards{
-     display: flex;
-     gap: 20px;
-     justify-content: center;
-     flex-wrap: wrap;
-     
-}
-.card-itens img{
-     height: 30vh;
-     position: relative;
-      
+     .banner-content {
+           top: -15dvh;
+           }
+
+     .banner-content h1 {
+           font-size: 6rem;
+           }
+
+     .banner-content span {
+           font-size: 8rem;
+           left: 50%;
+           top: 20dvh;
+           }
 }
 
-h5{
-     height: 1vh;
-}
+@media(min-width:1100px){
+     .banner img{
+           height: 30dvh;
+           }
 
-.card-itens p{
-     font-size: 1.5rem;
-     text-align: center;
-     background-color: red;
-     margin-top: 0.5vh;
+     .banner-overlay {
+           height: 30dvh;
+           }
+
+     .banner-content {
+           top: -10dvh;
+           }
+
+     .banner-content h1 {
+           font-size: 7rem;
+           }
+
+     .banner-content span {
+           font-size: 8rem;
+           left: 50%;
+           top: 18dvh;
+           }
+          }
+
+@media(min-width:1920px){
+     .banner img{
+           height: 30dvh;
+           }
+
+     .banner-overlay {
+           height: 30dvh;
+           }
+
+     .banner-content {
+           top: -10dvh;
+           }
+
+     .banner-content h1 {
+           font-size: 11rem;
+           }
+
+     .banner-content span {
+           font-size: 12rem;
+           left: 50%;
+           top: 15dvh;
+           }
 }
