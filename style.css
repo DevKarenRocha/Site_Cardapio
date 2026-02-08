@@ -16,7 +16,14 @@
 
  @font-face {
       font-family:'highspirited' ;
-      src: url(FONTES/HighSpirited.ttf) format('opentype');
+      src: url(FONTES/HighSpirited.ttf) format('truetype');
+      font-weight: normal;
+      font-style: normal;
+ }
+
+  @font-face {
+      font-family:'vogue' ;
+      src: url(FONTES/Vogue.ttf) format('truetype');
       font-weight: normal;
       font-style: normal;
  }
@@ -106,9 +113,9 @@
 
 .banner-content span {
       z-index: 5;
-      color: #ffdfb5;
+      color: #ffffff;
       font-family: 'highspirited', times, serif;
-      font-size: 15rem;
+      font-size: 8rem;
       position: absolute;
       left: 100vh;
       top: 13vh;
@@ -147,8 +154,9 @@
      text-align: center;
      font-size: 4rem;
      margin: 0;
-     margin-top: -12vh;
+     margin-top: -10vh;
      margin-bottom: 2vh;
+     font-family: 'vogue', times, serif;
      
 }
 
